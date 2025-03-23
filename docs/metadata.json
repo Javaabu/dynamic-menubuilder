@@ -1,5 +1,5 @@
 {
-    "name": "{Your Package}",
-    "description": "{package description}",
+    "name": "Dynamic Menubuilder",
+    "description": "Adds dynamic dropdown menus to your Laravel application",
     "version": "1"
 }
