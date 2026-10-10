@@ -12,7 +12,7 @@ Adds dynamic dropdown menus to your Laravel application
 
 ## Documentation
 
-You'll find the documentation on [https://docs.javaabu.com/docs/dynamic-menubuilder](https://docs.javaabu.com/docs/dynamic-menubuilder).
+You'll find the documentation on [https://docs.javaabu.com/dynamic-menubuilder](https://docs.javaabu.com/dynamic-menubuilder).
 
 Find yourself stuck using the package? Found a bug? Do you have general questions or suggestions for improving this package? Feel free to create an [issue](../../issues) on GitHub, we'll try to address it as soon as possible.
 
