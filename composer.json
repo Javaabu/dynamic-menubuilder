@@ -1,49 +1,110 @@
 {
-    "name": "javaabu/dynamic-menubuilder",
-    "description": "Adds dynamic dropdown menus to your Laravel application",
-    "homepage": "https://github.com/Javaabu/dynamic-menubuilder",
-    "license": "MIT",
-    "keywords": [
-        "javaabu",
-        "laravel",
-        "dynamic_menubuilder"
-    ],
-    "authors": [
-        {
-            "name": "WovenCoast",
-            "email": "wovencoast14782@techie.com",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^8.1",
-        "illuminate/support": "^9.0 || ^10.0 || ^11.0 || ^12.0"
+  "name": "javaabu/dynamic-menubuilder",
+  "description": "Menus your admins build by drag and drop for Laravel: developer-defined menu locations, links to your models, Blade (javaabu/forms) and Inertia React (@javaabu/forms) builder pages, Blade and React components to render them, and optional javaabu/translatable support.",
+  "homepage": "https://github.com/Javaabu/dynamic-menubuilder",
+  "license": "MIT",
+  "keywords": [
+    "javaabu",
+    "laravel",
+    "menu",
+    "menu-builder",
+    "navigation",
+    "drag-and-drop",
+    "dhivehi"
+  ],
+  "authors": [
+    {
+      "name": "Javaabu Pvt. Ltd.",
+      "email": "info@javaabu.com",
+      "homepage": "https://javaabu.com",
+      "role": "Developer"
     },
-    "require-dev": {
-        "laravel/pint": "^1.14",
-        "orchestra/testbench": "^7.0 || ^8.0 || ^9.0 || ^10.0",
-        "phpunit/phpunit": "^9.5 || ^10.5 || ^11.5.3"
+    {
+      "name": "WovenCoast",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.4",
+    "illuminate/contracts": "^12.0 || ^13.0",
+    "illuminate/database": "^12.0 || ^13.0",
+    "illuminate/http": "^12.0 || ^13.0",
+    "illuminate/routing": "^12.0 || ^13.0",
+    "illuminate/support": "^12.0 || ^13.0",
+    "illuminate/validation": "^12.0 || ^13.0",
+    "illuminate/view": "^12.0 || ^13.0",
+    "javaabu/forms": "^2.0@dev",
+    "javaabu/manifest": "^1.0@dev",
+    "javaabu/permissions": "^3.0@dev",
+    "javaabu/stencil": "^1.0@dev"
+  },
+  "require-dev": {
+    "inertiajs/inertia-laravel": "^2.0 || ^3.0",
+    "javaabu/boost-javaabu-guidelines": "^1.4",
+    "javaabu/translatable": "^3.0@dev",
+    "laravel/pint": "^1.24",
+    "orchestra/testbench": "^10.0 || ^11.0",
+    "phpunit/phpunit": "^11.5.3 || ^12.5.8"
+  },
+  "suggest": {
+    "inertiajs/inertia-laravel": "Render the menu builder with Inertia React (^2.0 || ^3.0)",
+    "javaabu/translatable": "Translate menu item titles and links into every active language (^3.0)"
+  },
+  "autoload": {
+    "psr-4": {
+      "Javaabu\\DynamicMenubuilder\\": "src/",
+      "Javaabu\\DynamicMenubuilder\\Database\\Factories\\": "database/factories/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Javaabu\\DynamicMenubuilder\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-clover=clover.xml",
+    "lint": "vendor/bin/pint --test",
+    "format": "vendor/bin/pint"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-next-gen": "1.x-dev"
     },
-    "autoload": {
-        "psr-4": {
-            "Javaabu\\DynamicMenubuilder\\": "src/"
-        }
+    "laravel": {
+      "providers": [
+        "Javaabu\\DynamicMenubuilder\\DynamicMenubuilderServiceProvider"
+      ],
+      "aliases": {
+        "Menus": "Javaabu\\DynamicMenubuilder\\Facades\\Menus"
+      }
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Javaabu/forms"
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Javaabu\\DynamicMenubuilder\\Tests\\": "tests/"
-        }
+    {
+      "type": "vcs",
+      "url": "https://github.com/Javaabu/manifest"
     },
-    "extra": {
-        "branch-alias": {
-            "dev-main": "1.0-dev"
-        },
-        "laravel": {
-            "providers": [
-                "Javaabu\\DynamicMenubuilder\\DynamicMenubuilderServiceProvider"
-            ]
-        }
+    {
+      "type": "vcs",
+      "url": "https://github.com/Javaabu/permissions"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    {
+      "type": "vcs",
+      "url": "https://github.com/Javaabu/stencil"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/n4ff4h/translatable"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

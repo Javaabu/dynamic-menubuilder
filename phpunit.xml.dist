@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php"
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
          backupGlobals="false"
-         backupStaticProperties="false"
          colors="true"
-         processIsolation="false"
-         stopOnFailure="false">
+         cacheDirectory=".phpunit.cache"
+         failOnWarning="true"
+         failOnRisky="true">
     <testsuites>
-        <testsuite name="Test Suite">
-            <directory>tests</directory>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory>tests/Feature</directory>
+        </testsuite>
+        <testsuite name="Http">
+            <directory>tests/Http</directory>
+        </testsuite>
+        <testsuite name="Translatable">
+            <directory>tests/Translatable</directory>
         </testsuite>
     </testsuites>
     <source>
@@ -15,22 +26,11 @@
             <directory>src</directory>
         </include>
     </source>
-    <logging>
-        <junit outputFile="build/report.junit.xml"/>
-        <testdoxHtml outputFile="build/coverage"/>
-        <testdoxText outputFile="build/coverage.txt"/>
-    </logging>
     <php>
         <env name="APP_ENV" value="testing"/>
-        <env name="APP_MAINTENANCE_DRIVER" value="file"/>
-        <env name="BCRYPT_ROUNDS" value="4"/>
+        <env name="APP_KEY" value="base64:yWa/ByhLC/GUvfToOuaPD7zDwB64qkc/QkaQOrT5IpE="/>
         <env name="CACHE_STORE" value="array"/>
-        <env name="DB_CONNECTION" value="sqlite"/>
-        <env name="DB_DATABASE" value=":memory:"/>
-        <env name="MAIL_MAILER" value="array"/>
-        <env name="PULSE_ENABLED" value="false"/>
-        <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
-        <env name="TELESCOPE_ENABLED" value="false"/>
+        <env name="QUEUE_CONNECTION" value="sync"/>
     </php>
 </phpunit>

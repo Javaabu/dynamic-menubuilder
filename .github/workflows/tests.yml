@@ -1,0 +1,138 @@
+name: tests
+
+on:
+  push:
+    branches: [next-gen]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ["8.4", "8.5"]
+        laravel: ["12.*", "13.*"]
+        stability: [prefer-lowest, prefer-stable]
+        include:
+          - laravel: "12.*"
+            testbench: "10.*"
+          - laravel: "13.*"
+            testbench: "11.*"
+
+    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - ${{ matrix.stability }}
+
+    env:
+      COVERAGE: ${{ matrix.php == '8.4' && matrix.laravel == '13.*' && matrix.stability == 'prefer-stable' }}
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, pdo, sqlite, pdo_sqlite, zip, intl
+          coverage: ${{ env.COVERAGE == 'true' && 'xdebug' || 'none' }}
+
+      - name: Install dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
+          composer require "orchestra/testbench:${{ matrix.testbench }}" --dev --no-interaction --no-update
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+
+      - name: Run tests
+        if: env.COVERAGE != 'true'
+        run: vendor/bin/phpunit
+
+      - name: Run tests with coverage
+        if: env.COVERAGE == 'true'
+        run: vendor/bin/phpunit --coverage-clover=clover.xml
+
+      - name: Upload coverage
+        if: env.COVERAGE == 'true'
+        uses: codecov/codecov-action@v5
+        with:
+          files: clover.xml
+          flags: php
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+
+  without-optional:
+    runs-on: ubuntu-latest
+
+    name: Without optional packages (javaabu/translatable, inertia)
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          extensions: mbstring, pdo, sqlite, pdo_sqlite, zip, intl
+          coverage: none
+
+      - name: Install dependencies without the optional packages
+        run: |
+          composer remove --dev javaabu/translatable inertiajs/inertia-laravel --no-update --no-interaction
+          composer update --prefer-dist --no-interaction
+
+      # tests/Translatable uses translatable's own test helpers; the Inertia tests skip themselves.
+      - name: Run tests
+        run: vendor/bin/phpunit --exclude-testsuite Translatable
+
+  dependencies:
+    runs-on: ubuntu-latest
+
+    name: Production dependencies
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: none
+
+      - name: Install production dependencies
+        run: composer update --prefer-dist --no-interaction --no-dev
+
+      # javaabu/helpers pins javaabu/settings ^1, which breaks installs next to settings v2.
+      - name: Check for javaabu/helpers and javaabu/settings ^1
+        run: |
+          composer show --tree --no-dev > tree.txt
+          if grep -E "javaabu/helpers|javaabu/settings (\^|~)?1" tree.txt; then
+            echo "javaabu/helpers or javaabu/settings ^1 is a production dependency."
+            exit 1
+          fi
+
+  pint:
+    runs-on: ubuntu-latest
+
+    name: Pint
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: none
+
+      - name: Install dependencies
+        run: composer update --prefer-dist --no-interaction
+
+      - name: Check code style
+        run: vendor/bin/pint --test
