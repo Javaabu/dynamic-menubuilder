@@ -1,0 +1,13 @@
+*.md
+*.php
+build
+CHANGELOG.md
+composer.json
+composer.lock
+coverage
+dist
+docs/**/*.json
+node_modules
+pnpm-lock.yaml
+tests/js/fixtures
+vendor

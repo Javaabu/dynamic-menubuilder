@@ -1,0 +1,973 @@
+<form
+    method="POST"
+    
+            data-focus-on-error
+    
+    id="dynamic-menubuilder-menu-form" action="http://localhost/admin/menus/1" class="stencil-form" data-stencil="edit"
+>
+            <input type="hidden" name="_token" value="" autocomplete="off">    
+            <input type="hidden" name="_method" value="PATCH">    
+                
+    <div class="stencil-item" data-stencil-key="section-0" data-stencil-hash="b93b65745de3"><div
+    class="ring-border bg-card text-card-foreground gap-(--card-spacing) overflow-hidden rounded-xl py-(--card-spacing) text-sm ring-1 [--card-spacing:--spacing(4)] has-data-[slot=card-footer]:pb-0 has-[&gt;img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(3)] data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl group/card flex flex-col stencil-section mb-4"
+    data-slot="card"
+>
+    
+
+        <div class="gap-1 rounded-t-xl px-(--card-spacing) [.border-b]:pb-(--card-spacing) group/card-header @container/card-header grid auto-rows-min items-start has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto]" data-slot="card-header">
+    <div class="text-base leading-snug font-semibold group-data-[size=sm]/card:text-sm" data-slot="card-title">
+    Menu
+</div>
+</div>
+    
+    <div class="px-(--card-spacing)" data-slot="card-content">
+        <div class="stencil-item" data-stencil-key="name" data-stencil-hash="f854737aa497"><div class="min-w-0 @container/form-field w-full mb-4" data-slot="form-field" data-label-layout="stacked">
+    <div class="gap-2 grid">
+                    <div class="gap-2 flex items-center justify-between ">
+                <label class="gap-2 text-sm leading-snug font-normal group-data-[disabled=true]:opacity-50 peer-disabled:opacity-50 flex items-center select-none group-data-[disabled=true]:pointer-events-none peer-disabled:cursor-not-allowed" for="name" data-slot="label">
+                    Name
+            <span class="required text-destructive" data-slot="required-marker" aria-hidden="true">*</span>
+            </label>
+            </div>
+                <div class="min-w-0 gap-1.5 grid ">
+            <input
+                    class="border-input hover:border-primary-5 focus-visible:border-primary focus-visible:ring-primary/20 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 disabled:bg-input/50 dark:disabled:bg-input/80 h-8 rounded-lg border bg-card px-2.5 py-1 text-base transition-colors file:h-6 file:text-sm file:font-medium focus-visible:ring-2 aria-invalid:ring-3 md:text-sm w-full min-w-0 outline-none file:inline-flex file:border-0 file:bg-transparent file:text-foreground placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50" required="required" maxlength="255"
+                                        data-slot="input"
+                    type="text"
+                    value="Main"
+                    name="name"
+                                            id="name"
+                                                        />
+        </div>
+    </div>
+</div>
+
+</div><div class="stencil-item" data-stencil-key="locations" data-stencil-hash="5b7517d7cbaf"><div class="min-w-0 @container/form-field w-full mb-4 stencil-options-field" data-slot="form-field" data-label-layout="stacked">
+    <div class="gap-2 grid">
+                    <div class="gap-2 flex items-center justify-between ">
+                <label class="gap-2 text-sm leading-snug font-normal group-data-[disabled=true]:opacity-50 peer-disabled:opacity-50 flex items-center select-none group-data-[disabled=true]:pointer-events-none peer-disabled:cursor-not-allowed" for="locations-header" data-slot="label">
+                    Show in
+                        </label>
+            </div>
+                <div class="min-w-0 gap-1.5 grid ">
+            <div
+        class="stencil-options "
+        role="group"
+            >
+                    <div class="gap-2.5 flex items-start" data-slot="checkbox-field">
+        <span class="flex shrink-0 items-center min-h-5">
+            <input
+                class="appearance-none border-input bg-card hover:border-primary checked:bg-primary checked:text-primary-foreground dark:checked:bg-primary checked:border-primary aria-invalid:checked:border-primary aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 flex size-4 items-center justify-center rounded-[4px] border transition-colors group-has-disabled/field:opacity-50 focus-visible:ring-3 aria-invalid:ring-3 group-has-[:focus-visible]/field-label:ring-0 group-has-[:focus-visible]/field-label:not-checked:border-input group-has-[:focus-visible]/field-label:checked:border-primary peer relative shrink-0 outline-none after:absolute after:-inset-x-3 after:-inset-y-2 disabled:cursor-not-allowed disabled:opacity-50 forms-checkbox"
+                data-slot="checkbox"
+                id="locations-header"
+                name="locations[]"
+                type="checkbox"
+                value="header"
+                                checked            >
+        </span>
+        <div class="min-w-0 gap-1 grid">
+            <label class="gap-2 text-sm leading-snug font-normal group-data-[disabled=true]:opacity-50 peer-disabled:opacity-50 flex items-center select-none group-data-[disabled=true]:pointer-events-none peer-disabled:cursor-not-allowed checkbox-label" for="locations-header" data-slot="label">
+                    Header
+                        </label>
+                    </div>
+    </div>
+
+                    <div class="gap-2.5 flex items-start" data-slot="checkbox-field">
+        <span class="flex shrink-0 items-center min-h-5">
+            <input
+                class="appearance-none border-input bg-card hover:border-primary checked:bg-primary checked:text-primary-foreground dark:checked:bg-primary checked:border-primary aria-invalid:checked:border-primary aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 flex size-4 items-center justify-center rounded-[4px] border transition-colors group-has-disabled/field:opacity-50 focus-visible:ring-3 aria-invalid:ring-3 group-has-[:focus-visible]/field-label:ring-0 group-has-[:focus-visible]/field-label:not-checked:border-input group-has-[:focus-visible]/field-label:checked:border-primary peer relative shrink-0 outline-none after:absolute after:-inset-x-3 after:-inset-y-2 disabled:cursor-not-allowed disabled:opacity-50 forms-checkbox"
+                data-slot="checkbox"
+                id="locations-footer"
+                name="locations[]"
+                type="checkbox"
+                value="footer"
+                                            >
+        </span>
+        <div class="min-w-0 gap-1 grid">
+            <label class="gap-2 text-sm leading-snug font-normal group-data-[disabled=true]:opacity-50 peer-disabled:opacity-50 flex items-center select-none group-data-[disabled=true]:pointer-events-none peer-disabled:cursor-not-allowed checkbox-label" for="locations-footer" data-slot="label">
+                    Footer
+                        </label>
+                    </div>
+    </div>
+
+            </div>
+
+            <p class="text-sm text-muted-foreground" data-slot="help-text">
+    A location shows one menu: ticking one takes it from the menu it shows now.
+</p>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+
+    </div>
+</div><div class="stencil-item" data-stencil-key="section-1" data-stencil-hash="cb6366b528d1"><div
+    class="ring-border bg-card text-card-foreground gap-(--card-spacing) overflow-hidden rounded-xl py-(--card-spacing) text-sm ring-1 [--card-spacing:--spacing(4)] has-data-[slot=card-footer]:pb-0 has-[&gt;img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(3)] data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl group/card flex flex-col stencil-section mb-4"
+    data-slot="card"
+>
+    
+
+        <div class="gap-1 rounded-t-xl px-(--card-spacing) [.border-b]:pb-(--card-spacing) group/card-header @container/card-header grid auto-rows-min items-start has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto]" data-slot="card-header">
+    <div class="text-base leading-snug font-semibold group-data-[size=sm]/card:text-sm" data-slot="card-title">
+    Items
+</div>
+</div>
+    
+    <div class="px-(--card-spacing)" data-slot="card-content">
+        <div class="stencil-item" data-stencil-key="items" data-stencil-hash="aafc4c265edf"><div class="dynamic-menubuilder flex flex-col gap-4"
+     id="menu-builder-items"
+     data-menu-builder
+     data-name="items"
+     data-search-url="http://localhost/admin/menus/linkables/{source}"
+     data-locations-field="locations"
+     data-default-max-depth="3"
+     data-location-depths='{"header":2,"footer":1}'
+     data-strings='{"add_items":"Add items","custom_link":"Link","title":"Title","url":"URL","url_help":"Leave the URL empty for a heading, such as the label of a dropdown.","add_to_menu":"Add to menu","search":"Search :source","no_results":"Nothing found.","searching":"Searching\u2026","index_page":"All :source","add_index":"Add the index page","structure":"Menu structure","empty":"The menu has no items. Add items from the list.","drag":"Drag to reorder :title","move_up":"Move up","move_down":"Move down","indent":"Move under the item above","outdent":"Move out of its parent","remove":"Remove","edit_item":"Edit :title","done":"Done","new_tab":"Open in a new tab","rel":"Link relationship (rel)","css_class":"CSS classes","icon":"Icon","visibility":"Show to","locales":"Show in these languages","locales_help":"Leave all unticked to show it in every language.","broken":"The record this item linked to was deleted. Remove the item.","untranslated":"No title in :language: it falls back to the original.","max_depth":"This menu\u0027s locations show up to :max levels.","default_title":"Uses the title of :title","moved":":title moved to position :position of :total.","indented":":title is now under :parent.","outdented":":title moved out of :parent.","removed":":title removed.","added":":title added to the menu.","untitled":"Untitled","heading":"Heading"}'>
+
+    
+    <div class="grid gap-6 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)]">
+        <div class="flex flex-col gap-3" data-menu-builder-add>
+            <h3 class="font-semibold">Add items</h3>
+
+            <details class="rounded-lg border p-3" data-menu-builder-panel="link" open>
+                <summary class="cursor-pointer font-medium">Link</summary>
+                <div class="mt-3 flex flex-col gap-3">
+                    <label class="flex flex-col gap-1 text-sm">
+                        <span>Title</span>
+                        <input type="text" class="h-8 rounded-md border px-2" dir="auto" data-new-link-title>
+                    </label>
+                    <label class="flex flex-col gap-1 text-sm">
+                        <span>URL</span>
+                        <input type="text" class="h-8 rounded-md border px-2" dir="ltr" inputmode="url" data-new-link-url>
+                        <span class="text-xs text-muted-foreground">Leave the URL empty for a heading, such as the label of a dropdown.</span>
+                    </label>
+                    <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-add-link="data-add-link"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+                <svg class="forms-icon" aria-hidden="true" focusable="false" data-icon="inline-start" data-icon-name="plus" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+        Add to menu
+    </button>
+                </div>
+            </details>
+
+                            <details class="rounded-lg border p-3" data-menu-builder-source="pages" data-label="Pages">
+                    <summary class="cursor-pointer font-medium" dir="auto">Pages</summary>
+                    <div class="mt-3 flex flex-col gap-3">
+                        <label class="flex flex-col gap-1 text-sm">
+                            <span>Search Pages</span>
+                            <input type="search" class="h-8 rounded-md border px-2" dir="auto" data-source-search autocomplete="off">
+                        </label>
+                        <ul class="flex flex-col gap-1" data-source-results></ul>
+                        <p class="text-sm text-muted-foreground" data-source-status aria-live="polite"></p>
+                                                    <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-add-index="data-add-index" data-title="Pages"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+                <i class="list" aria-hidden="true" data-icon="inline-start"></i>
+        Add the index page
+    </button>
+                                            </div>
+                </details>
+                            <details class="rounded-lg border p-3" data-menu-builder-source="news" data-label="News">
+                    <summary class="cursor-pointer font-medium" dir="auto">News</summary>
+                    <div class="mt-3 flex flex-col gap-3">
+                        <label class="flex flex-col gap-1 text-sm">
+                            <span>Search News</span>
+                            <input type="search" class="h-8 rounded-md border px-2" dir="auto" data-source-search autocomplete="off">
+                        </label>
+                        <ul class="flex flex-col gap-1" data-source-results></ul>
+                        <p class="text-sm text-muted-foreground" data-source-status aria-live="polite"></p>
+                                                    <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-add-index="data-add-index" data-title="News"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+                <i class="list" aria-hidden="true" data-icon="inline-start"></i>
+        Add the index page
+    </button>
+                                            </div>
+                </details>
+                            <details class="rounded-lg border p-3" data-menu-builder-source="events" data-label="Events">
+                    <summary class="cursor-pointer font-medium" dir="auto">Events</summary>
+                    <div class="mt-3 flex flex-col gap-3">
+                        <label class="flex flex-col gap-1 text-sm">
+                            <span>Search Events</span>
+                            <input type="search" class="h-8 rounded-md border px-2" dir="auto" data-source-search autocomplete="off">
+                        </label>
+                        <ul class="flex flex-col gap-1" data-source-results></ul>
+                        <p class="text-sm text-muted-foreground" data-source-status aria-live="polite"></p>
+                                            </div>
+                </details>
+                    </div>
+
+        <div class="flex flex-col gap-3">
+            <h3 class="font-semibold" id="menu-builder-items-structure">Menu structure</h3>
+            <p class="text-sm text-muted-foreground" data-menu-builder-depth-hint>
+                This menu&#039;s locations show up to 3 levels.
+            </p>
+
+            <ol class="flex flex-col gap-2" aria-labelledby="menu-builder-items-structure" data-menu-builder-list>
+                                    <li class="dynamic-menubuilder__item"
+    style="margin-inline-start: 0rem"
+    data-menu-item
+    data-key="1"
+    data-depth="1"
+    data-type="link">
+    <div class="flex flex-wrap items-center gap-2 rounded-lg border bg-card p-2 ">
+        <button type="button" class="cursor-grab rounded p-1 text-muted-foreground" draggable="true"
+                data-action="drag"
+                aria-label="Drag to reorder Home"
+                aria-keyshortcuts="Alt+ArrowUp Alt+ArrowDown Alt+ArrowRight Alt+ArrowLeft">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+        </button>
+
+        <span class="min-w-0 flex-1 truncate font-medium" dir="auto" data-item-label>Home</span>
+        <span class="rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground" dir="auto" data-item-type>Link</span>
+
+        <span class="flex items-center gap-1">
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="move-up" title="Move up"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true">↑</span><span class="sr-only">Move up</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="move-down" title="Move down"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true">↓</span><span class="sr-only">Move down</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="outdent" title="Move out of its parent"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true" class="rtl:-scale-x-100 inline-block">⇤</span><span class="sr-only">Move out of its parent</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="indent" title="Move under the item above"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true" class="rtl:-scale-x-100 inline-block">⇥</span><span class="sr-only">Move under the item above</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="toggle" aria-expanded="false" aria-controls="menu-builder-items-item-1"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span data-toggle-label>Edit Home</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-[color-mix(in_oklab,var(--destructive),black_12%)] focus-visible:ring-destructive/30 focus-visible:border-destructive aria-expanded:bg-destructive/90 h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="remove"
+    data-slot="button"
+    data-variant="destructive"
+    data-size="sm"
+            type="button"
+        >
+            Remove
+    </button>
+        </span>
+    </div>
+
+    
+    <input type="hidden" name="items[0][key]" value="1" data-input="key">
+    <input type="hidden" name="items[0][id]" value="1" data-input="id">
+    <input type="hidden" name="items[0][parent]" value="" data-input="parent">
+    <input type="hidden" name="items[0][type]" value="link" data-input="type">
+    <input type="hidden" name="items[0][source]" value="" data-input="source">
+    <input type="hidden" name="items[0][linkable_id]" value="" data-input="linkable_id">
+
+    <div id="menu-builder-items-item-1" class="mt-2 grid gap-3 rounded-lg border p-3 md:grid-cols-2" data-item-panel  hidden >
+                                                                    
+                    <label class="flex flex-col gap-1 text-sm">
+                <span>Title</span>
+                <input type="text" class="h-8 rounded-md border px-2" dir="auto" name="items[0][title]" value="Home" maxlength="255" data-input="title"
+                       >
+                            </label>
+            <label class="flex flex-col gap-1 text-sm" data-link-only >
+                <span>URL</span>
+                <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[0][url]" value="/" maxlength="2048" data-input="url">
+                            </label>
+        
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Show to</span>
+            <select class="h-8 rounded-md border px-2" name="items[0][visibility]" data-input="visibility">
+                                    <option value="everyone" selected>Everyone</option>
+                                    <option value="guests" >Signed-out visitors</option>
+                                    <option value="users" >Signed-in users</option>
+                            </select>
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Icon</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[0][icon]" value="" maxlength="255" data-input="icon">
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>CSS classes</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[0][css_class]" value="" maxlength="255" data-input="css_class">
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Link relationship (rel)</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[0][rel]" value="" maxlength="255" data-input="rel">
+        </label>
+
+        <label class="flex items-center gap-2 text-sm">
+            <input type="hidden" name="items[0][new_tab]" value="0" data-input="new_tab_off">
+            <input type="checkbox" name="items[0][new_tab]" value="1"  data-input="new_tab">
+            <span>Open in a new tab</span>
+        </label>
+
+        
+        <div class="md:col-span-2">
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="close"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            Done
+    </button>
+        </div>
+    </div>
+</li>
+                                    <li class="dynamic-menubuilder__item"
+    style="margin-inline-start: 0rem"
+    data-menu-item
+    data-key="2"
+    data-depth="1"
+    data-type="link">
+    <div class="flex flex-wrap items-center gap-2 rounded-lg border bg-card p-2 ">
+        <button type="button" class="cursor-grab rounded p-1 text-muted-foreground" draggable="true"
+                data-action="drag"
+                aria-label="Drag to reorder ޚިދުމަތްތައް"
+                aria-keyshortcuts="Alt+ArrowUp Alt+ArrowDown Alt+ArrowRight Alt+ArrowLeft">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+        </button>
+
+        <span class="min-w-0 flex-1 truncate font-medium" dir="auto" data-item-label>ޚިދުމަތްތައް</span>
+        <span class="rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground" dir="auto" data-item-type>Heading</span>
+
+        <span class="flex items-center gap-1">
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="move-up" title="Move up"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true">↑</span><span class="sr-only">Move up</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="move-down" title="Move down"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true">↓</span><span class="sr-only">Move down</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="outdent" title="Move out of its parent"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true" class="rtl:-scale-x-100 inline-block">⇤</span><span class="sr-only">Move out of its parent</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="indent" title="Move under the item above"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true" class="rtl:-scale-x-100 inline-block">⇥</span><span class="sr-only">Move under the item above</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="toggle" aria-expanded="false" aria-controls="menu-builder-items-item-2"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span data-toggle-label>Edit ޚިދުމަތްތައް</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-[color-mix(in_oklab,var(--destructive),black_12%)] focus-visible:ring-destructive/30 focus-visible:border-destructive aria-expanded:bg-destructive/90 h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="remove"
+    data-slot="button"
+    data-variant="destructive"
+    data-size="sm"
+            type="button"
+        >
+            Remove
+    </button>
+        </span>
+    </div>
+
+    
+    <input type="hidden" name="items[1][key]" value="2" data-input="key">
+    <input type="hidden" name="items[1][id]" value="2" data-input="id">
+    <input type="hidden" name="items[1][parent]" value="" data-input="parent">
+    <input type="hidden" name="items[1][type]" value="link" data-input="type">
+    <input type="hidden" name="items[1][source]" value="" data-input="source">
+    <input type="hidden" name="items[1][linkable_id]" value="" data-input="linkable_id">
+
+    <div id="menu-builder-items-item-2" class="mt-2 grid gap-3 rounded-lg border p-3 md:grid-cols-2" data-item-panel  hidden >
+                                                                    
+                    <label class="flex flex-col gap-1 text-sm">
+                <span>Title</span>
+                <input type="text" class="h-8 rounded-md border px-2" dir="auto" name="items[1][title]" value="ޚިދުމަތްތައް" maxlength="255" data-input="title"
+                       >
+                            </label>
+            <label class="flex flex-col gap-1 text-sm" data-link-only >
+                <span>URL</span>
+                <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[1][url]" value="" maxlength="2048" data-input="url">
+                            </label>
+        
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Show to</span>
+            <select class="h-8 rounded-md border px-2" name="items[1][visibility]" data-input="visibility">
+                                    <option value="everyone" selected>Everyone</option>
+                                    <option value="guests" >Signed-out visitors</option>
+                                    <option value="users" >Signed-in users</option>
+                            </select>
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Icon</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[1][icon]" value="" maxlength="255" data-input="icon">
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>CSS classes</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[1][css_class]" value="" maxlength="255" data-input="css_class">
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Link relationship (rel)</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[1][rel]" value="" maxlength="255" data-input="rel">
+        </label>
+
+        <label class="flex items-center gap-2 text-sm">
+            <input type="hidden" name="items[1][new_tab]" value="0" data-input="new_tab_off">
+            <input type="checkbox" name="items[1][new_tab]" value="1"  data-input="new_tab">
+            <span>Open in a new tab</span>
+        </label>
+
+        
+        <div class="md:col-span-2">
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="close"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            Done
+    </button>
+        </div>
+    </div>
+</li>
+                                    <li class="dynamic-menubuilder__item"
+    style="margin-inline-start: 1.5rem"
+    data-menu-item
+    data-key="3"
+    data-depth="2"
+    data-type="model">
+    <div class="flex flex-wrap items-center gap-2 rounded-lg border bg-card p-2 ">
+        <button type="button" class="cursor-grab rounded p-1 text-muted-foreground" draggable="true"
+                data-action="drag"
+                aria-label="Drag to reorder About us"
+                aria-keyshortcuts="Alt+ArrowUp Alt+ArrowDown Alt+ArrowRight Alt+ArrowLeft">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+        </button>
+
+        <span class="min-w-0 flex-1 truncate font-medium" dir="auto" data-item-label>About us</span>
+        <span class="rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground" dir="auto" data-item-type>Pages</span>
+
+        <span class="flex items-center gap-1">
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="move-up" title="Move up"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true">↑</span><span class="sr-only">Move up</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="move-down" title="Move down"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true">↓</span><span class="sr-only">Move down</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="outdent" title="Move out of its parent"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true" class="rtl:-scale-x-100 inline-block">⇤</span><span class="sr-only">Move out of its parent</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="indent" title="Move under the item above"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true" class="rtl:-scale-x-100 inline-block">⇥</span><span class="sr-only">Move under the item above</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="toggle" aria-expanded="false" aria-controls="menu-builder-items-item-3"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span data-toggle-label>Edit About us</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-[color-mix(in_oklab,var(--destructive),black_12%)] focus-visible:ring-destructive/30 focus-visible:border-destructive aria-expanded:bg-destructive/90 h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="remove"
+    data-slot="button"
+    data-variant="destructive"
+    data-size="sm"
+            type="button"
+        >
+            Remove
+    </button>
+        </span>
+    </div>
+
+    
+    <input type="hidden" name="items[2][key]" value="3" data-input="key">
+    <input type="hidden" name="items[2][id]" value="3" data-input="id">
+    <input type="hidden" name="items[2][parent]" value="2" data-input="parent">
+    <input type="hidden" name="items[2][type]" value="model" data-input="type">
+    <input type="hidden" name="items[2][source]" value="pages" data-input="source">
+    <input type="hidden" name="items[2][linkable_id]" value="1" data-input="linkable_id">
+
+    <div id="menu-builder-items-item-3" class="mt-2 grid gap-3 rounded-lg border p-3 md:grid-cols-2" data-item-panel  hidden >
+                                                                    
+                    <label class="flex flex-col gap-1 text-sm">
+                <span>Title</span>
+                <input type="text" class="h-8 rounded-md border px-2" dir="auto" name="items[2][title]" value="" maxlength="255" data-input="title"
+                        placeholder="About us" >
+                            </label>
+            <label class="flex flex-col gap-1 text-sm" data-link-only  hidden >
+                <span>URL</span>
+                <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[2][url]" value="" maxlength="2048" data-input="url">
+                            </label>
+        
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Show to</span>
+            <select class="h-8 rounded-md border px-2" name="items[2][visibility]" data-input="visibility">
+                                    <option value="everyone" selected>Everyone</option>
+                                    <option value="guests" >Signed-out visitors</option>
+                                    <option value="users" >Signed-in users</option>
+                            </select>
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Icon</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[2][icon]" value="" maxlength="255" data-input="icon">
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>CSS classes</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[2][css_class]" value="" maxlength="255" data-input="css_class">
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Link relationship (rel)</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[2][rel]" value="" maxlength="255" data-input="rel">
+        </label>
+
+        <label class="flex items-center gap-2 text-sm">
+            <input type="hidden" name="items[2][new_tab]" value="0" data-input="new_tab_off">
+            <input type="checkbox" name="items[2][new_tab]" value="1"  data-input="new_tab">
+            <span>Open in a new tab</span>
+        </label>
+
+        
+        <div class="md:col-span-2">
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="close"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            Done
+    </button>
+        </div>
+    </div>
+</li>
+                                    <li class="dynamic-menubuilder__item"
+    style="margin-inline-start: 0rem"
+    data-menu-item
+    data-key="4"
+    data-depth="1"
+    data-type="link">
+    <div class="flex flex-wrap items-center gap-2 rounded-lg border bg-card p-2 ">
+        <button type="button" class="cursor-grab rounded p-1 text-muted-foreground" draggable="true"
+                data-action="drag"
+                aria-label="Drag to reorder Contact"
+                aria-keyshortcuts="Alt+ArrowUp Alt+ArrowDown Alt+ArrowRight Alt+ArrowLeft">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+        </button>
+
+        <span class="min-w-0 flex-1 truncate font-medium" dir="auto" data-item-label>Contact</span>
+        <span class="rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground" dir="auto" data-item-type>Link</span>
+
+        <span class="flex items-center gap-1">
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="move-up" title="Move up"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true">↑</span><span class="sr-only">Move up</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="move-down" title="Move down"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true">↓</span><span class="sr-only">Move down</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="outdent" title="Move out of its parent"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true" class="rtl:-scale-x-100 inline-block">⇤</span><span class="sr-only">Move out of its parent</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="indent" title="Move under the item above"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true" class="rtl:-scale-x-100 inline-block">⇥</span><span class="sr-only">Move under the item above</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="toggle" aria-expanded="false" aria-controls="menu-builder-items-item-4"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span data-toggle-label>Edit Contact</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-[color-mix(in_oklab,var(--destructive),black_12%)] focus-visible:ring-destructive/30 focus-visible:border-destructive aria-expanded:bg-destructive/90 h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="remove"
+    data-slot="button"
+    data-variant="destructive"
+    data-size="sm"
+            type="button"
+        >
+            Remove
+    </button>
+        </span>
+    </div>
+
+    
+    <input type="hidden" name="items[3][key]" value="4" data-input="key">
+    <input type="hidden" name="items[3][id]" value="4" data-input="id">
+    <input type="hidden" name="items[3][parent]" value="" data-input="parent">
+    <input type="hidden" name="items[3][type]" value="link" data-input="type">
+    <input type="hidden" name="items[3][source]" value="" data-input="source">
+    <input type="hidden" name="items[3][linkable_id]" value="" data-input="linkable_id">
+
+    <div id="menu-builder-items-item-4" class="mt-2 grid gap-3 rounded-lg border p-3 md:grid-cols-2" data-item-panel  hidden >
+                                                                    
+                    <label class="flex flex-col gap-1 text-sm">
+                <span>Title</span>
+                <input type="text" class="h-8 rounded-md border px-2" dir="auto" name="items[3][title]" value="Contact" maxlength="255" data-input="title"
+                       >
+                            </label>
+            <label class="flex flex-col gap-1 text-sm" data-link-only >
+                <span>URL</span>
+                <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[3][url]" value="/contact" maxlength="2048" data-input="url">
+                            </label>
+        
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Show to</span>
+            <select class="h-8 rounded-md border px-2" name="items[3][visibility]" data-input="visibility">
+                                    <option value="everyone" selected>Everyone</option>
+                                    <option value="guests" >Signed-out visitors</option>
+                                    <option value="users" >Signed-in users</option>
+                            </select>
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Icon</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[3][icon]" value="" maxlength="255" data-input="icon">
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>CSS classes</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[3][css_class]" value="" maxlength="255" data-input="css_class">
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Link relationship (rel)</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[3][rel]" value="" maxlength="255" data-input="rel">
+        </label>
+
+        <label class="flex items-center gap-2 text-sm">
+            <input type="hidden" name="items[3][new_tab]" value="0" data-input="new_tab_off">
+            <input type="checkbox" name="items[3][new_tab]" value="1"  data-input="new_tab">
+            <span>Open in a new tab</span>
+        </label>
+
+        
+        <div class="md:col-span-2">
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="close"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            Done
+    </button>
+        </div>
+    </div>
+</li>
+                            </ol>
+
+            <p class="rounded-lg border border-dashed p-4 text-sm text-muted-foreground" data-menu-builder-empty  hidden >
+                The menu has no items. Add items from the list.
+            </p>
+
+            <div class="sr-only" role="status" aria-live="polite" data-menu-builder-status></div>
+        </div>
+    </div>
+
+    <template data-menu-builder-template>
+        <li class="dynamic-menubuilder__item"
+    style="margin-inline-start: 0rem"
+    data-menu-item
+    data-key="__KEY__"
+    data-depth="1"
+    data-type="link">
+    <div class="flex flex-wrap items-center gap-2 rounded-lg border bg-card p-2 ">
+        <button type="button" class="cursor-grab rounded p-1 text-muted-foreground" draggable="true"
+                data-action="drag"
+                aria-label="Drag to reorder Untitled"
+                aria-keyshortcuts="Alt+ArrowUp Alt+ArrowDown Alt+ArrowRight Alt+ArrowLeft">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+        </button>
+
+        <span class="min-w-0 flex-1 truncate font-medium" dir="auto" data-item-label>Untitled</span>
+        <span class="rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground" dir="auto" data-item-type>Heading</span>
+
+        <span class="flex items-center gap-1">
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="move-up" title="Move up"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true">↑</span><span class="sr-only">Move up</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="move-down" title="Move down"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true">↓</span><span class="sr-only">Move down</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="outdent" title="Move out of its parent"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true" class="rtl:-scale-x-100 inline-block">⇤</span><span class="sr-only">Move out of its parent</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="indent" title="Move under the item above"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span aria-hidden="true" class="rtl:-scale-x-100 inline-block">⇥</span><span class="sr-only">Move under the item above</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="toggle" aria-expanded="false" aria-controls="menu-builder-items-item-__KEY__"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            <span data-toggle-label>Edit Untitled</span>
+    </button>
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-[color-mix(in_oklab,var(--destructive),black_12%)] focus-visible:ring-destructive/30 focus-visible:border-destructive aria-expanded:bg-destructive/90 h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="remove"
+    data-slot="button"
+    data-variant="destructive"
+    data-size="sm"
+            type="button"
+        >
+            Remove
+    </button>
+        </span>
+    </div>
+
+    
+    <input type="hidden" name="items[__INDEX__][key]" value="__KEY__" data-input="key">
+    <input type="hidden" name="items[__INDEX__][id]" value="" data-input="id">
+    <input type="hidden" name="items[__INDEX__][parent]" value="" data-input="parent">
+    <input type="hidden" name="items[__INDEX__][type]" value="link" data-input="type">
+    <input type="hidden" name="items[__INDEX__][source]" value="" data-input="source">
+    <input type="hidden" name="items[__INDEX__][linkable_id]" value="" data-input="linkable_id">
+
+    <div id="menu-builder-items-item-__KEY__" class="mt-2 grid gap-3 rounded-lg border p-3 md:grid-cols-2" data-item-panel  hidden >
+                                                                    
+                    <label class="flex flex-col gap-1 text-sm">
+                <span>Title</span>
+                <input type="text" class="h-8 rounded-md border px-2" dir="auto" name="items[__INDEX__][title]" value="" maxlength="255" data-input="title"
+                       >
+                            </label>
+            <label class="flex flex-col gap-1 text-sm" data-link-only >
+                <span>URL</span>
+                <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[__INDEX__][url]" value="" maxlength="2048" data-input="url">
+                            </label>
+        
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Show to</span>
+            <select class="h-8 rounded-md border px-2" name="items[__INDEX__][visibility]" data-input="visibility">
+                                    <option value="everyone" selected>Everyone</option>
+                                    <option value="guests" >Signed-out visitors</option>
+                                    <option value="users" >Signed-in users</option>
+                            </select>
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Icon</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[__INDEX__][icon]" value="" maxlength="255" data-input="icon">
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>CSS classes</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[__INDEX__][css_class]" value="" maxlength="255" data-input="css_class">
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm">
+            <span>Link relationship (rel)</span>
+            <input type="text" class="h-8 rounded-md border px-2" dir="ltr" name="items[__INDEX__][rel]" value="" maxlength="255" data-input="rel">
+        </label>
+
+        <label class="flex items-center gap-2 text-sm">
+            <input type="hidden" name="items[__INDEX__][new_tab]" value="0" data-input="new_tab_off">
+            <input type="checkbox" name="items[__INDEX__][new_tab]" value="1"  data-input="new_tab">
+            <span>Open in a new tab</span>
+        </label>
+
+        
+        <div class="md:col-span-2">
+            <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_oklab,var(--secondary),var(--foreground)_6%)] h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5" data-action="close"
+    data-slot="button"
+    data-variant="secondary"
+    data-size="sm"
+            type="button"
+        >
+            Done
+    </button>
+        </div>
+    </div>
+</li>
+    </template>
+</div>
+</div>
+    </div>
+
+    </div>
+</div>
+
+                    <div class="stencil-submit" data-stencil-submit>
+                <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary-hover active:bg-primary-active aria-expanded:bg-primary-hover h-8 gap-2 px-3.75 animate-submit"
+    data-slot="button"
+    data-variant="default"
+    data-size="default"
+            type="submit"
+        >
+            <svg class="forms-icon forms-spinner animate-spin" aria-hidden="true" focusable="false" hidden="hidden" data-slot="button-spinner" data-icon-name="loader-circle" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+            Save menu
+    </button>
+            </div>
+</form>
+
+
+
+                    <div class="flex justify-end">
+                <div class="flex flex-wrap items-center gap-2" data-menu-actions>
+    
+            <form
+    method="POST"
+    
+            data-focus-on-error
+    
+    action="http://localhost/admin/menus/1" data-confirm="Delete this menu? Its items are deleted too." onsubmit="return window.confirm(this.dataset.confirm)"
+>
+            <input type="hidden" name="_token" value="" autocomplete="off">    
+            <input type="hidden" name="_method" value="DELETE">    
+    
+    <button
+    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-lg border border-transparent bg-clip-padding text-sm font-normal focus-visible:ring-3 aria-invalid:ring-3 [&amp;_svg:not([class*=&#039;size-&#039;])]:size-4 group/button inline-flex shrink-0 items-center justify-center whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-[color-mix(in_oklab,var(--destructive),black_12%)] focus-visible:ring-destructive/30 focus-visible:border-destructive aria-expanded:bg-destructive/90 h-7 gap-1.5 rounded-md px-2.75 in-data-[slot=button-group]:rounded-md [&amp;_svg:not([class*=&#039;size-&#039;])]:size-3.5"
+    data-slot="button"
+    data-variant="destructive"
+    data-size="sm"
+            type="submit"
+        >
+                <svg class="forms-icon" aria-hidden="true" focusable="false" data-icon="inline-start" data-icon-name="trash-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        Delete
+    </button>
+</form>

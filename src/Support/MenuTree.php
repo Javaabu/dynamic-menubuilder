@@ -90,6 +90,30 @@ class MenuTree
     }
 
     /**
+     * Add each item's depth (1 for the top level) from the parent keys. An item whose parent
+     * isn't before it goes to the top level.
+     *
+     * @param  array<int, array<string, mixed>>  $items
+     * @return array<int, array<string, mixed>>
+     */
+    public static function withDepths(array $items): array
+    {
+        $depths = [];
+
+        foreach ($items as $index => $item) {
+            $item = is_array($item) ? $item : [];
+            $key = (string) ($item['key'] ?? $index);
+            $parent = filled($item['parent'] ?? null) ? (string) $item['parent'] : null;
+            $depth = $parent !== null && isset($depths[$parent]) ? $depths[$parent] + 1 : 1;
+
+            $depths[$key] = $depth;
+            $items[$index] = [...$item, 'key' => $key, 'depth' => $depth];
+        }
+
+        return array_values($items);
+    }
+
+    /**
      * Validation rules for the list, keyed under the field's name
      *
      * @return array<string, array<int, mixed>>

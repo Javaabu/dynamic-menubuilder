@@ -121,6 +121,57 @@ jobs:
             exit 1
           fi
 
+  js:
+    runs-on: ubuntu-latest
+
+    name: JavaScript (builder, components and pages)
+
+    steps:
+      - uses: actions/checkout@v5
+
+      # The pages import @javaabu/stencil from the Composer install.
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: none
+
+      - name: Install Composer dependencies
+        run: composer update --prefer-dist --no-interaction --no-dev
+
+      - uses: pnpm/action-setup@v4
+
+      # Keep the store out of pnpm's own node_modules/.bin, where @javaabu/forms'
+      # prepare build can't emit portable types (Javaabu/react-forms#20).
+      - name: Use a pnpm store outside node_modules
+        run: pnpm config set store-dir ~/.pnpm-store
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install npm dependencies
+        run: pnpm install --frozen-lockfile
+
+      - run: pnpm lint
+      - run: pnpm format:check
+      - run: pnpm typecheck
+
+      - name: Tests with coverage
+        run: pnpm test:coverage
+
+      - name: Check that dist/ is up to date
+        run: pnpm build:check
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v5
+        with:
+          files: coverage/lcov.info
+          flags: js
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+
   pint:
     runs-on: ubuntu-latest
 
