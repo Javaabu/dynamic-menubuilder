@@ -459,7 +459,7 @@ export class BladeMenuBuilder {
     this.act(action, this.elements().indexOf(element))
   }
 
-  /** Alt + arrow keys on the drag handle: up, down, in and out (mirrored in right-to-left) */
+  /** Alt + arrow keys on the drag handle: up, down, in and out (mirrored in RTL) */
   protected onListKeydown(event: KeyboardEvent): void {
     const handle = (event.target as HTMLElement).closest<HTMLElement>("[data-action='drag']")
     const element = handle?.closest<HTMLElement>("[data-menu-item]")
