@@ -1,0 +1,61 @@
+{
+    "header": [
+        {
+            "id": 1,
+            "title": "Home",
+            "url": "/",
+            "type": "link",
+            "depth": 1,
+            "target": null,
+            "rel": null,
+            "css_class": null,
+            "icon": null,
+            "current": false,
+            "active": false,
+            "children": []
+        },
+        {
+            "id": 2,
+            "title": "ޚިދުމަތްތައް",
+            "url": null,
+            "type": "link",
+            "depth": 1,
+            "target": null,
+            "rel": null,
+            "css_class": null,
+            "icon": null,
+            "current": false,
+            "active": false,
+            "children": [
+                {
+                    "id": 3,
+                    "title": "About us",
+                    "url": "http://localhost/pages/about",
+                    "type": "model",
+                    "depth": 2,
+                    "target": null,
+                    "rel": null,
+                    "css_class": null,
+                    "icon": null,
+                    "current": false,
+                    "active": false,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "News",
+            "url": "http://localhost/news",
+            "type": "index",
+            "depth": 1,
+            "target": "_blank",
+            "rel": "noopener",
+            "css_class": null,
+            "icon": null,
+            "current": false,
+            "active": false,
+            "children": []
+        }
+    ]
+}

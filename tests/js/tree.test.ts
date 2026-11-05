@@ -113,6 +113,8 @@ describe("tree", () => {
     expect(shape(moveTo(tree, 5, 2, 9))).toEqual(["home", "services", "-contact", "-permits", "--forms", "-licences"])
     expect(shape(moveTo(tree, 1, 0, 1))).toEqual(["services", "-permits", "--forms", "-licences", "home", "contact"])
     expect(shape(moveTo(tree, 2, 5, 3, 2))).toEqual(["home", "services", "-licences", "contact", "permits", "-forms"])
+    // before a parent's first child: it joins the children instead of adopting them
+    expect(shape(moveTo(tree, 5, 2))).toEqual(["home", "services", "-contact", "-permits", "--forms", "-licences"])
     expect(moveTo(tree, 1, 3)).toEqual(tree)
     expect(moveTo(tree, 1, 99)).toEqual(tree)
   })

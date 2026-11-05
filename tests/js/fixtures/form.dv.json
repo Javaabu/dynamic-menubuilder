@@ -1,0 +1,447 @@
+{
+    "menus": {
+        "header": [
+            {
+                "id": 1,
+                "title": "Home",
+                "url": "/",
+                "type": "link",
+                "depth": 1,
+                "target": null,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "current": false,
+                "active": false,
+                "children": []
+            },
+            {
+                "id": 2,
+                "title": "ޚިދުމަތްތައް",
+                "url": null,
+                "type": "link",
+                "depth": 1,
+                "target": null,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "current": false,
+                "active": false,
+                "children": [
+                    {
+                        "id": 3,
+                        "title": "About us",
+                        "url": "http://localhost/dv/pages/about",
+                        "type": "model",
+                        "depth": 2,
+                        "target": null,
+                        "rel": null,
+                        "css_class": null,
+                        "icon": null,
+                        "current": false,
+                        "active": false,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "title": "News",
+                "url": "http://localhost/dv/news",
+                "type": "index",
+                "depth": 1,
+                "target": "_blank",
+                "rel": "noopener",
+                "css_class": null,
+                "icon": null,
+                "current": false,
+                "active": false,
+                "children": []
+            }
+        ]
+    },
+    "errors": [],
+    "guard": "web",
+    "urls": {
+        "index": "http://localhost/admin/menus",
+        "create": "http://localhost/admin/menus/create",
+        "store": "http://localhost/admin/menus",
+        "search": "http://localhost/admin/menus/linkables/{source}",
+        "edit": "http://localhost/admin/menus/1/edit",
+        "update": "http://localhost/admin/menus/1",
+        "destroy": "http://localhost/admin/menus/1"
+    },
+    "can": {
+        "create": true,
+        "view": true,
+        "update": true,
+        "delete": true
+    },
+    "status": {
+        "success": null,
+        "error": null
+    },
+    "strings": {
+        "menus": "މެނޫތައް",
+        "locations": "މެނޫ ދައްކާ ތަންތަން",
+        "location": "ތަން",
+        "menu": "މެނޫ",
+        "name": "ނަން",
+        "items": "މެނޫގެ އައިޓަމްތައް",
+        "new": "އައު މެނޫ",
+        "back": "މެނޫތަކަށް އެނބުރި",
+        "edit": "ބަދަލުކުރޭ",
+        "delete": "ފޮހެލާ",
+        "actions": "ކުރެވޭނެ ކަންތައް",
+        "search": "ހޯދާ",
+        "search_placeholder": "މެނޫ ހޯދާ",
+        "confirm_delete": "މި މެނޫ ފޮހެލަންތޯ؟ މީގެ އައިޓަމްތައްވެސް ފޮހެވޭނެ.",
+        "empty": "އަދި އެއްވެސް މެނޫއެއް ނެތް.",
+        "no_menu": "މެނޫއެއް ނެތް",
+        "no_locations": "މި އެޕްގައި މެނޫ ދައްކާނެ ތަނެއް އަދި ކަނޑައަޅާފައެއް ނުވޭ."
+    },
+    "title": "މައި މެނޫ",
+    "form": {
+        "stencil": 1,
+        "id": "dynamic-menubuilder-menu-form",
+        "action": "http://localhost/admin/menus/1",
+        "method": "PATCH",
+        "operation": "edit",
+        "submit": "މެނޫ ސޭވްކުރޭ",
+        "summary": true,
+        "state": {
+            "name": "މައި މެނޫ",
+            "locations": [
+                "header"
+            ],
+            "items": [
+                {
+                    "key": "1",
+                    "id": 1,
+                    "parent": null,
+                    "type": "link",
+                    "source": null,
+                    "linkable_id": null,
+                    "linkable_label": null,
+                    "source_label": null,
+                    "broken": false,
+                    "title": "Home",
+                    "url": "/",
+                    "new_tab": false,
+                    "rel": null,
+                    "css_class": null,
+                    "icon": null,
+                    "visibility": "everyone",
+                    "locales": []
+                },
+                {
+                    "key": "2",
+                    "id": 2,
+                    "parent": null,
+                    "type": "link",
+                    "source": null,
+                    "linkable_id": null,
+                    "linkable_label": null,
+                    "source_label": null,
+                    "broken": false,
+                    "title": "ޚިދުމަތްތައް",
+                    "url": null,
+                    "new_tab": false,
+                    "rel": null,
+                    "css_class": null,
+                    "icon": null,
+                    "visibility": "everyone",
+                    "locales": []
+                },
+                {
+                    "key": "3",
+                    "id": 3,
+                    "parent": "2",
+                    "type": "model",
+                    "source": "pages",
+                    "linkable_id": "1",
+                    "linkable_label": "About us",
+                    "source_label": "Pages",
+                    "broken": false,
+                    "title": null,
+                    "url": null,
+                    "new_tab": false,
+                    "rel": null,
+                    "css_class": null,
+                    "icon": null,
+                    "visibility": "everyone",
+                    "locales": []
+                },
+                {
+                    "key": "4",
+                    "id": 4,
+                    "parent": null,
+                    "type": "index",
+                    "source": "news",
+                    "linkable_id": null,
+                    "linkable_label": "News",
+                    "source_label": "News",
+                    "broken": false,
+                    "title": null,
+                    "url": null,
+                    "new_tab": true,
+                    "rel": null,
+                    "css_class": null,
+                    "icon": null,
+                    "visibility": "everyone",
+                    "locales": []
+                }
+            ]
+        },
+        "live": null,
+        "components": [
+            {
+                "type": "section",
+                "key": "section-0",
+                "props": {
+                    "heading": "މެނޫ"
+                },
+                "children": [
+                    {
+                        "type": "text",
+                        "key": "name",
+                        "name": "name",
+                        "component": "Text",
+                        "props": {
+                            "label": "ނަން",
+                            "required": true,
+                            "maxLength": 255
+                        }
+                    },
+                    {
+                        "type": "checkbox-list",
+                        "key": "locations",
+                        "name": "locations[]",
+                        "component": "Checkbox",
+                        "props": {
+                            "label": "ދައްކާނެ ތަންތަން",
+                            "help": "ކޮންމެ ތަނެއްގައި ދައްކާނީ އެއް މެނޫ. ތަނެއް ޚިޔާރުކުރުމުން، އެ ތަނުގައި މިހާރު ދައްކާ މެނޫއިން އެ ތަން ނެގޭނެ.",
+                            "options": [
+                                {
+                                    "value": "header",
+                                    "label": "Header"
+                                },
+                                {
+                                    "value": "footer",
+                                    "label": "Footer"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "section",
+                "key": "section-1",
+                "props": {
+                    "heading": "އައިޓަމްތައް"
+                },
+                "children": [
+                    {
+                        "type": "menu-items",
+                        "key": "items",
+                        "name": "items",
+                        "props": {
+                            "label": "މެނޫގެ އައިޓަމްތައް",
+                            "showLabel": false,
+                            "sources": [
+                                {
+                                    "key": "pages",
+                                    "label": "Pages",
+                                    "has_index": true,
+                                    "index_title": "Pages"
+                                },
+                                {
+                                    "key": "news",
+                                    "label": "News",
+                                    "has_index": true,
+                                    "index_title": "News"
+                                },
+                                {
+                                    "key": "events",
+                                    "label": "Events",
+                                    "has_index": false,
+                                    "index_title": "Events"
+                                }
+                            ],
+                            "locations": [
+                                {
+                                    "key": "header",
+                                    "label": "Header",
+                                    "description": null,
+                                    "max_depth": 2
+                                },
+                                {
+                                    "key": "footer",
+                                    "label": "Footer",
+                                    "description": null,
+                                    "max_depth": 1
+                                }
+                            ],
+                            "locationsField": "locations",
+                            "defaultMaxDepth": 3,
+                            "searchUrl": "http://localhost/admin/menus/linkables/{source}",
+                            "visibilities": [
+                                {
+                                    "value": "everyone",
+                                    "label": "ހުރިހާ މީހުންނަށް"
+                                },
+                                {
+                                    "value": "guests",
+                                    "label": "ލޮގިން ނުވާ ޒިޔާރަތްކުރާ މީހުންނަށް"
+                                },
+                                {
+                                    "value": "users",
+                                    "label": "ލޮގިން ވެފައިވާ ބޭނުންކުރާ މީހުންނަށް"
+                                }
+                            ],
+                            "strings": {
+                                "add_items": "އައިޓަމް އިތުރުކުރޭ",
+                                "custom_link": "ލިންކް",
+                                "title": "ސުރުޚީ",
+                                "url": "ލިންކް (URL)",
+                                "url_help": "ޑްރޮޕްޑައުނެއްގެ ނަން ފަދަ ސުރުޚީއަކަށް ލިންކް ހުސްކޮށް ބާއްވާ.",
+                                "add_to_menu": "މެނޫއަށް އިތުރުކުރޭ",
+                                "search": ":source ހޯދާ",
+                                "no_results": "އެއްވެސް އެއްޗެއް ނުފެނުނު.",
+                                "searching": "ހޯދަނީ…",
+                                "index_page": "ހުރިހާ :source",
+                                "add_index": "ލިސްޓު ސަފްހާ އިތުރުކުރޭ",
+                                "structure": "މެނޫގެ ތަރުތީބު",
+                                "empty": "މި މެނޫގައި އެއްވެސް އައިޓަމެއް ނެތް. ލިސްޓުން އައިޓަމް އިތުރުކުރޭ.",
+                                "drag": ":title ގެ ތަރުތީބު ބަދަލުކުރަން ދަމާ",
+                                "move_up": "މައްޗަށް",
+                                "move_down": "ތިރިއަށް",
+                                "indent": "މަތީގައިވާ އައިޓަމްގެ ދަށަށް",
+                                "outdent": "މައި އައިޓަމްގެ ދަށުން ބޭރަށް",
+                                "remove": "ނަގާލާ",
+                                "edit_item": ":title ބަދަލުކުރޭ",
+                                "done": "ނިމުނީ",
+                                "new_tab": "އައު ޓެބެއްގައި ހުޅުވާ",
+                                "rel": "ލިންކުގެ ގުޅުން (rel)",
+                                "css_class": "CSS ކްލާސްތައް",
+                                "icon": "އައިކަން",
+                                "visibility": "ދައްކާނީ",
+                                "locales": "މި ބަސްބަހުގައި ދައްކާ",
+                                "locales_help": "ހުރިހާ ބަހެއްގައި ދައްކަން، އެއްވެސް ބަހެއް ޚިޔާރު ނުކުރޭ.",
+                                "broken": "މި އައިޓަމް ލިންކްކުރި ރެކޯޑް ފޮހެލާފައި. އައިޓަމް ނަގާލާ.",
+                                "untranslated": ":language އިން ސުރުޚީއެއް ނެތް. އަސްލު ސުރުޚީ ދައްކާނެ.",
+                                "max_depth": "މި މެނޫ ދައްކާ ތަންތަނުގައި ފެންނާނީ :max ފިޔަވަޅާ ހަމައަށް.",
+                                "default_title": ":title ގެ ސުރުޚީ ބޭނުންކުރެވޭނެ",
+                                "moved": ":title ބަދަލުކުރެވުނީ :total ގެ ތެރެއިން :position ވަނައަށް.",
+                                "indented": ":title މިހާރު ހުރީ :parent ގެ ދަށުގައި.",
+                                "outdented": ":title ނެގުނީ :parent ގެ ދަށުން.",
+                                "removed": ":title ނަގާލެވިއްޖެ.",
+                                "added": ":title މެނޫއަށް އިތުރުކުރެވިއްޖެ.",
+                                "untitled": "ސުރުޚީއެއް ނެތް",
+                                "heading": "ސުރުޚީ"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "menu": {
+        "id": 1,
+        "name": "މައި މެނޫ",
+        "locations": [
+            "header"
+        ],
+        "items": [
+            {
+                "key": "1",
+                "id": 1,
+                "parent": null,
+                "type": "link",
+                "source": null,
+                "linkable_id": null,
+                "linkable_label": null,
+                "source_label": null,
+                "broken": false,
+                "title": "Home",
+                "url": "/",
+                "new_tab": false,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "visibility": "everyone",
+                "locales": []
+            },
+            {
+                "key": "2",
+                "id": 2,
+                "parent": null,
+                "type": "link",
+                "source": null,
+                "linkable_id": null,
+                "linkable_label": null,
+                "source_label": null,
+                "broken": false,
+                "title": "ޚިދުމަތްތައް",
+                "url": null,
+                "new_tab": false,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "visibility": "everyone",
+                "locales": []
+            },
+            {
+                "key": "3",
+                "id": 3,
+                "parent": "2",
+                "type": "model",
+                "source": "pages",
+                "linkable_id": "1",
+                "linkable_label": "About us",
+                "source_label": "Pages",
+                "broken": false,
+                "title": null,
+                "url": null,
+                "new_tab": false,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "visibility": "everyone",
+                "locales": []
+            },
+            {
+                "key": "4",
+                "id": 4,
+                "parent": null,
+                "type": "index",
+                "source": "news",
+                "linkable_id": null,
+                "linkable_label": "News",
+                "source_label": "News",
+                "broken": false,
+                "title": null,
+                "url": null,
+                "new_tab": true,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "visibility": "everyone",
+                "locales": []
+            }
+        ],
+        "links": {
+            "edit": "http://localhost/admin/menus/1/edit",
+            "update": "http://localhost/admin/menus/1",
+            "destroy": "http://localhost/admin/menus/1"
+        },
+        "can": {
+            "view": true,
+            "update": true,
+            "delete": true
+        },
+        "created_at": "2026-11-05T10:00:00+00:00",
+        "updated_at": "2026-11-05T10:00:00+00:00"
+    }
+}

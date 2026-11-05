@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@inertiajs/react": "^2.3.29",
     "@javaabu/forms": "github:Javaabu/react-forms#next-gen",
     "@javaabu/i18n": "github:Javaabu/i18n#build-on-git-install",
     "@javaabu/onu": "^0.2.1",

@@ -174,7 +174,8 @@ export function remove<T extends TreeItem>(items: readonly T[], index: number): 
 /**
  * Move the item's block so it starts where the item at `target` is in the list (before it
  * when moving up, after its block when moving down), at `depth` (clamped so the tree stays
- * valid). Dropping an item inside its own block does nothing.
+ * valid: no deeper than one level under the item before it, and no shallower than the item
+ * after it). Dropping an item inside its own block does nothing.
  */
 export function moveTo<T extends TreeItem>(
   items: readonly T[],
@@ -198,9 +199,11 @@ export function moveTo<T extends TreeItem>(
   if (target > index) insertAt = blockEnd(rest, insertAt)
 
   const previousDepth = rest[insertAt - 1]?.depth ?? 0
+  // Never shallower than the item after it, which would make that item its child
+  const nextDepth = rest[insertAt]?.depth ?? 1
   const height = blockHeight(items, index)
   const wanted = depth ?? block[0]!.depth
-  const newDepth = Math.max(1, Math.min(wanted, previousDepth + 1, maxDepth - height + 1))
+  const newDepth = Math.max(1, Math.min(Math.max(wanted, nextDepth), previousDepth + 1, maxDepth - height + 1))
 
   return normalize(
     [...rest.slice(0, insertAt), ...shiftBlock(block, newDepth - block[0]!.depth), ...rest.slice(insertAt)],

@@ -1,0 +1,132 @@
+{
+    "menus": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 1,
+                "name": "މައި މެނޫ",
+                "created_at": "2026-11-05T10:00:00.000000Z",
+                "updated_at": "2026-11-05T10:00:00.000000Z",
+                "items_count": 4,
+                "location_assignments": [
+                    {
+                        "id": 1,
+                        "location": "header",
+                        "menu_id": 1,
+                        "created_at": "2026-11-05T10:00:00.000000Z",
+                        "updated_at": "2026-11-05T10:00:00.000000Z"
+                    }
+                ]
+            }
+        ],
+        "first_page_url": "http://localhost/admin/menus?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http://localhost/admin/menus?page=1",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "page": null,
+                "active": false
+            },
+            {
+                "url": "http://localhost/admin/menus?page=1",
+                "label": "1",
+                "page": 1,
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "page": null,
+                "active": false
+            }
+        ],
+        "next_page_url": null,
+        "path": "http://localhost/admin/menus",
+        "per_page": 20,
+        "prev_page_url": null,
+        "to": 1,
+        "total": 1
+    },
+    "errors": [],
+    "guard": "web",
+    "urls": {
+        "index": "http://localhost/admin/menus",
+        "create": "http://localhost/admin/menus/create",
+        "store": "http://localhost/admin/menus",
+        "search": "http://localhost/admin/menus/linkables/{source}"
+    },
+    "can": {
+        "create": true,
+        "view": false,
+        "update": false,
+        "delete": false
+    },
+    "status": {
+        "success": null,
+        "error": null
+    },
+    "strings": {
+        "menus": "Menus",
+        "locations": "Menu locations",
+        "location": "Location",
+        "menu": "Menu",
+        "name": "Name",
+        "items": "Menu items",
+        "new": "New menu",
+        "back": "Back to menus",
+        "edit": "Edit",
+        "delete": "Delete",
+        "actions": "Actions",
+        "search": "Search",
+        "search_placeholder": "Search menus",
+        "confirm_delete": "Delete this menu? Its items are deleted too.",
+        "empty": "No menus yet.",
+        "no_menu": "No menu",
+        "no_locations": "The app has no menu locations yet."
+    },
+    "title": "Menus",
+    "rows": [
+        {
+            "id": 1,
+            "name": "މައި މެނޫ",
+            "items_count": 4,
+            "locations": [
+                "Header"
+            ],
+            "links": {
+                "edit": "http://localhost/admin/menus/1/edit",
+                "update": "http://localhost/admin/menus/1",
+                "destroy": "http://localhost/admin/menus/1"
+            },
+            "can": {
+                "view": true,
+                "update": true,
+                "delete": true
+            }
+        }
+    ],
+    "locations": [
+        {
+            "key": "header",
+            "label": "Header",
+            "description": null,
+            "max_depth": 2,
+            "menu": {
+                "id": 1,
+                "name": "މައި މެނޫ",
+                "edit_url": "http://localhost/admin/menus/1/edit"
+            }
+        },
+        {
+            "key": "footer",
+            "label": "Footer",
+            "description": null,
+            "max_depth": 1,
+            "menu": null
+        }
+    ],
+    "search": null
+}
