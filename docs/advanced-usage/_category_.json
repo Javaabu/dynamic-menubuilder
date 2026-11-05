@@ -1,0 +1,11 @@
+{
+    "position": 1.32,
+    "label": "Advanced Usage",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+        "type": "generated-index",
+        "slug": "/dynamic-menubuilder/_categories/advanced-usage",
+        "description": "Configuration, permissions, overriding controllers and views, translations, Dhivehi, the API, testing and the contract for package authors."
+    }
+}
