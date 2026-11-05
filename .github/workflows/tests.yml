@@ -13,6 +13,10 @@ concurrency:
 permissions:
   contents: read
 
+# The workflow token keeps Composer within GitHub's API limits for the VCS repositories
+env:
+  COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ github.token }}"}}'
+
 jobs:
   tests:
     runs-on: ubuntu-latest
