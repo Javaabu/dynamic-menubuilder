@@ -61,7 +61,7 @@ describe("MenuItemsField", () => {
     expect(depths()).toEqual([1, 1, 2, 1])
     expect(row("ޚިދުމަތްތައް").querySelector("[data-item-type]")!.textContent).toBe("Heading")
     expect(row("About us").querySelector("[data-item-type]")!.textContent).toBe("Pages")
-    expect(screen.getByText("This menu's locations show up to 2 levels.")).toBeInTheDocument()
+    expect(screen.getByText("Levels this menu's locations show: 2")).toBeInTheDocument()
   })
 
   it("posts every item with its parent", () => {
@@ -106,7 +106,7 @@ describe("MenuItemsField", () => {
     const footer = form.querySelector<HTMLInputElement>('input[value="footer"]')!
     fireEvent.click(footer)
 
-    expect(screen.getAllByText("This menu's locations show up to 1 levels.").length).toBeGreaterThan(0)
+    expect(screen.getAllByText("Levels this menu's locations show: 1").length).toBeGreaterThan(0)
     expect(document.querySelector("[data-menu-builder-too-deep]")).not.toBeNull()
   })
 
@@ -330,7 +330,7 @@ describe("MenuItemsField", () => {
   it("uses a fixed maximum depth", () => {
     renderField({ maxDepth: 1, locationsField: null })
 
-    expect(screen.getAllByText("This menu's locations show up to 1 levels.").length).toBeGreaterThan(0)
+    expect(screen.getAllByText("Levels this menu's locations show: 1").length).toBeGreaterThan(0)
     expect(button("News", "indent").disabled).toBe(true)
   })
 })

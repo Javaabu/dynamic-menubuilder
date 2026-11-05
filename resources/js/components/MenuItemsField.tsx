@@ -93,13 +93,25 @@ function useMaxDepth(
         ),
       )
 
+    // Onu's checkboxes update after the click that toggles them, so read once it has settled
+    const timers = new Set<ReturnType<typeof setTimeout>>()
+    const readSoon = () => {
+      read()
+      const timer = setTimeout(() => {
+        timers.delete(timer)
+        read()
+      }, 0)
+      timers.add(timer)
+    }
+
     read()
-    form.addEventListener("change", read)
-    form.addEventListener("click", read)
+    form.addEventListener("change", readSoon)
+    form.addEventListener("click", readSoon)
 
     return () => {
-      form.removeEventListener("change", read)
-      form.removeEventListener("click", read)
+      form.removeEventListener("change", readSoon)
+      form.removeEventListener("click", readSoon)
+      timers.forEach((timer) => clearTimeout(timer))
     }
   }, [formRef, locationsField])
 

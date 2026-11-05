@@ -331,7 +331,7 @@
                                 "locales_help": "Leave all unticked to show it in every language.",
                                 "broken": "The record this item linked to was deleted. Remove the item.",
                                 "untranslated": "No title in :language: it falls back to the original.",
-                                "max_depth": "This menu's locations show up to :max levels.",
+                                "max_depth": "Levels this menu's locations show: :max",
                                 "default_title": "Uses the title of :title",
                                 "moved": ":title moved to position :position of :total.",
                                 "indented": ":title is now under :parent.",

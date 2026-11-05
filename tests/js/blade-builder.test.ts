@@ -81,7 +81,7 @@ describe("Blade menu builder", () => {
     footer.dispatchEvent(new Event("change", { bubbles: true }))
 
     expect(builder.maxDepth()).toBe(1)
-    expect(document.querySelector("[data-menu-builder-depth-hint]")!.textContent).toContain("1 levels")
+    expect(document.querySelector("[data-menu-builder-depth-hint]")!.textContent).toContain("show: 1")
     expect(builder.root.hasAttribute("data-too-deep")).toBe(true)
     expect(item("Contact").querySelector<HTMLButtonElement>('[data-action="indent"]')!.disabled).toBe(true)
 

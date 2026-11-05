@@ -87,6 +87,16 @@ describe("dynamic-menubuilder::Menus/Form", () => {
     expect(document.querySelector("[data-menu-item] [data-item-type]")?.textContent).toBe("Link")
   })
 
+  it("limits the builder's depth to the ticked locations", async () => {
+    render(<FormPage {...form} />)
+
+    expect(screen.getByText("Levels this menu's locations show: 2")).toBeInTheDocument()
+
+    screen.getByRole("checkbox", { name: "Footer" }).click()
+
+    expect((await screen.findAllByText("Levels this menu's locations show: 1")).length).toBeGreaterThan(0)
+  })
+
   it("offers to delete an existing menu, not a new one", () => {
     const { unmount } = render(<FormPage {...form} />)
     expect(screen.getByRole("button", { name: "Delete" })).toBeInTheDocument()
