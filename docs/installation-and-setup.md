@@ -68,7 +68,7 @@ Each piece has its own page: [Menu locations](basic-usage/menu-locations.md), [L
 
 # Blade
 
-The builder's Blade pages extend `layouts.app` and fill its `content` section; change both in the config. Its script is shipped through [javaabu/manifest](https://github.com/Javaabu/manifest) and injected into the page automatically. Apps that build with Vite pick it up with manifest's Vite plugin; others get the prebuilt copy in the package's `dist/`.
+The builder's Blade pages extend `layouts.app` and fill its `content` section; change both in the config. Its script is shipped through [javaabu/manifest](https://github.com/Javaabu/manifest) and injected into the page automatically. Apps that build with Vite pick it up with manifest's Vite plugin; others get the prebuilt copy in the package's `dist/`. The script needs no npm packages, so `php artisan manifest:check` doesn't ask Blade apps for React, @javaabu/forms or Onu.
 
 # Inertia React
 
@@ -78,7 +78,7 @@ Set the builder to render with Inertia:
 DYNAMIC_MENUBUILDER_VIEWS=inertia
 ```
 
-The pages are `dynamic-menubuilder::Menus/Index` and `dynamic-menubuilder::Menus/Form`, resolved by javaabu/manifest's `resolvePage()`. Your app needs manifest's Vite plugin and these npm packages (`php artisan manifest:check` lists what's missing):
+The pages are `dynamic-menubuilder::Menus/Index` and `dynamic-menubuilder::Menus/Form`, resolved by javaabu/manifest's `resolvePage()`. Your app needs manifest's Vite plugin and these npm packages. The package declares them for its pages only (`for: 'pages'`), so `php artisan manifest:check` lists what's missing once your `package.json` has `@inertiajs/react`:
 
 ```bash
 npm install react react-dom @inertiajs/react @javaabu/onu github:Javaabu/react-forms#next-gen

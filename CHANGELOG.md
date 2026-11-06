@@ -14,5 +14,6 @@ The first release.
 - `MenuItemsField`, the builder as a @javaabu/forms custom field, and `MenuTree` to validate and save menus in code.
 - `view_menus`, `edit_menus` and `delete_menus` and `MenuPolicy` through javaabu/permissions; overridable controllers, form, policy and views; multi-auth.
 - Optional javaabu/translatable support: per-locale titles and URLs on one structure shared by every language; items limited to locales.
+- The React pages' npm packages (@javaabu/forms, Onu, React, `@inertiajs/react`) are declared for pages only, so `php artisan manifest:check` doesn't ask Blade apps for them.
 - English and Dhivehi strings, right-to-left layouts, Thaana inputs.
 - Docs, `llms.txt`, `AGENTS.md`, and a Laravel Boost guideline and skill.

@@ -107,6 +107,9 @@ class DynamicMenubuilderServiceProvider extends ServiceProvider
                 ->pages()
                 ->script('builder', 'js/blade/menu-builder.ts')
                 ->dist('../dist')
+                // The Blade builder's script only imports the package's own tree.ts, so every
+                // npm dependency belongs to the React pages and components: Blade apps aren't
+                // asked to install them by `manifest:check`
                 ->npm([
                     '@javaabu/forms' => 'github:Javaabu/react-forms#next-gen',
                     '@javaabu/onu' => '^0.2.1',
@@ -114,7 +117,7 @@ class DynamicMenubuilderServiceProvider extends ServiceProvider
                     'react' => '^19.0',
                     'react-dom' => '^19.0',
                     '@inertiajs/react' => '^2.0 || ^3.0',
-                ]);
+                ], for: 'pages');
         });
     }
 

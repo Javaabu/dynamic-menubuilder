@@ -78,7 +78,7 @@ php artisan migrate
 php artisan permissions:sync     # view_menus, edit_menus, delete_menus
 ```
 
-Blade by default; set `DYNAMIC_MENUBUILDER_VIEWS=inertia` for the React pages (`dynamic-menubuilder::Menus/Index`, `dynamic-menubuilder::Menus/Form`).
+Blade by default; set `DYNAMIC_MENUBUILDER_VIEWS=inertia` for the React pages (`dynamic-menubuilder::Menus/Index`, `dynamic-menubuilder::Menus/Form`). Blade apps need no npm packages (the builder's script is self-contained). Inertia apps install `react`, `react-dom`, `@inertiajs/react`, `@javaabu/onu` and `@javaabu/forms`, which the package declares for pages only: `php artisan manifest:check` lists them once `package.json` has `@inertiajs/react`.
 
 ## 4. Render
 
