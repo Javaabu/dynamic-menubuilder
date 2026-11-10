@@ -1,8 +1,11 @@
-build
+/vendor
+/node_modules
+/build
+/coverage
 composer.lock
-vendor
-coverage
 .phpunit.result.cache
+.phpunit.cache
 .php-cs-fixer.cache
 .idea
+.DS_Store
 clover.xml

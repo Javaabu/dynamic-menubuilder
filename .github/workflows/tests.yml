@@ -1,0 +1,258 @@
+name: tests
+
+on:
+  push:
+    branches: [next-gen]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+# The workflow token keeps Composer within GitHub's API limits for the VCS repositories
+env:
+  COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ github.token }}"}}'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ["8.4", "8.5"]
+        laravel: ["12.*", "13.*"]
+        stability: [prefer-lowest, prefer-stable]
+        include:
+          - laravel: "12.*"
+            testbench: "10.*"
+          - laravel: "13.*"
+            testbench: "11.*"
+
+    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - ${{ matrix.stability }}
+
+    env:
+      COVERAGE: ${{ matrix.php == '8.4' && matrix.laravel == '13.*' && matrix.stability == 'prefer-stable' }}
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, pdo, sqlite, pdo_sqlite, zip, intl
+          coverage: ${{ env.COVERAGE == 'true' && 'xdebug' || 'none' }}
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer downloads
+        uses: actions/cache@v6
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ runner.os }}-${{ github.job }}-${{ strategy.job-index }}-${{ hashFiles('composer.json', 'composer.lock') }}
+          restore-keys: |
+            composer-${{ runner.os }}-${{ github.job }}-${{ strategy.job-index }}-
+            composer-${{ runner.os }}-${{ github.job }}-
+
+      - name: Install dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
+          composer require "orchestra/testbench:${{ matrix.testbench }}" --dev --no-interaction --no-update
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+
+      - name: Run tests
+        if: env.COVERAGE != 'true'
+        run: vendor/bin/phpunit
+
+      - name: Run tests with coverage
+        if: env.COVERAGE == 'true'
+        run: vendor/bin/phpunit --coverage-clover=clover.xml
+
+      - name: Upload coverage
+        if: env.COVERAGE == 'true'
+        uses: codecov/codecov-action@v5
+        with:
+          files: clover.xml
+          flags: php
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+
+  without-optional:
+    runs-on: ubuntu-latest
+
+    name: Without optional packages (javaabu/translatable, inertia)
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          extensions: mbstring, pdo, sqlite, pdo_sqlite, zip, intl
+          coverage: none
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer downloads
+        uses: actions/cache@v6
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ runner.os }}-${{ github.job }}-${{ strategy.job-index }}-${{ hashFiles('composer.json', 'composer.lock') }}
+          restore-keys: |
+            composer-${{ runner.os }}-${{ github.job }}-${{ strategy.job-index }}-
+            composer-${{ runner.os }}-${{ github.job }}-
+
+      - name: Install dependencies without the optional packages
+        run: |
+          composer remove --dev javaabu/translatable inertiajs/inertia-laravel --no-update --no-interaction
+          composer update --prefer-dist --no-interaction
+
+      # tests/Translatable uses translatable's own test helpers; the Inertia tests skip themselves.
+      - name: Run tests
+        run: vendor/bin/phpunit --exclude-testsuite Translatable
+
+  dependencies:
+    runs-on: ubuntu-latest
+
+    name: Production dependencies
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: none
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer downloads
+        uses: actions/cache@v6
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ runner.os }}-${{ github.job }}-${{ strategy.job-index }}-${{ hashFiles('composer.json', 'composer.lock') }}
+          restore-keys: |
+            composer-${{ runner.os }}-${{ github.job }}-${{ strategy.job-index }}-
+            composer-${{ runner.os }}-${{ github.job }}-
+
+      - name: Install production dependencies
+        run: composer update --prefer-dist --no-interaction --no-dev
+
+      # javaabu/helpers pins javaabu/settings ^1, which breaks installs next to settings v2.
+      - name: Check for javaabu/helpers and javaabu/settings ^1
+        run: |
+          composer show --tree --no-dev > tree.txt
+          if grep -E "javaabu/helpers|javaabu/settings (\^|~)?1" tree.txt; then
+            echo "javaabu/helpers or javaabu/settings ^1 is a production dependency."
+            exit 1
+          fi
+
+  js:
+    runs-on: ubuntu-latest
+
+    name: JavaScript (builder, components and pages)
+
+    steps:
+      - uses: actions/checkout@v5
+
+      # The pages import @javaabu/stencil from the Composer install.
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: none
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer downloads
+        uses: actions/cache@v6
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ runner.os }}-${{ github.job }}-${{ strategy.job-index }}-${{ hashFiles('composer.json', 'composer.lock') }}
+          restore-keys: |
+            composer-${{ runner.os }}-${{ github.job }}-${{ strategy.job-index }}-
+            composer-${{ runner.os }}-${{ github.job }}-
+
+      - name: Install Composer dependencies
+        run: composer update --prefer-dist --no-interaction --no-dev
+
+      - uses: pnpm/action-setup@v4
+
+      # Keep the store out of pnpm's own node_modules/.bin, where @javaabu/forms'
+      # prepare build can't emit portable types (Javaabu/react-forms#20).
+      - name: Use a pnpm store outside node_modules
+        run: pnpm config set store-dir ~/.pnpm-store
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install npm dependencies
+        run: pnpm install --frozen-lockfile
+
+      - run: pnpm lint
+      - run: pnpm format:check
+      - run: pnpm typecheck
+
+      - name: Tests with coverage
+        run: pnpm test:coverage
+
+      - name: Check that dist/ is up to date
+        run: pnpm build:check
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v5
+        with:
+          files: coverage/lcov.info
+          flags: js
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+
+  pint:
+    runs-on: ubuntu-latest
+
+    name: Pint
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          coverage: none
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer downloads
+        uses: actions/cache@v6
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ runner.os }}-${{ github.job }}-${{ strategy.job-index }}-${{ hashFiles('composer.json', 'composer.lock') }}
+          restore-keys: |
+            composer-${{ runner.os }}-${{ github.job }}-${{ strategy.job-index }}-
+            composer-${{ runner.os }}-${{ github.job }}-
+
+      - name: Install dependencies
+        run: composer update --prefer-dist --no-interaction
+
+      - name: Check code style
+        run: vendor/bin/pint --test

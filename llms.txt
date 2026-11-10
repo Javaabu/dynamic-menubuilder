@@ -1,0 +1,43 @@
+# javaabu/dynamic-menubuilder
+
+> Menus admins build by drag and drop, for Laravel. Developers define menu locations (Menus::location('header')->maxDepth(2)) and what items can link to: custom links, records of MenuLinkable models and their index pages, registered as sources (Menus::linkable(Page::class)). Route::menus() registers the builder pages, rendered in Blade (javaabu/forms) or Inertia React (@javaabu/forms + Onu), with overridable controllers and a javaabu/permissions policy. Menus render with <x-dynamic-menubuilder::menu location="header" /> or <Menu location="header" /> from @javaabu/dynamic-menubuilder (Inertia shared data). With javaabu/translatable (optional), item titles and URLs are translated and the structure is shared by every language. Dhivehi and RTL built in.
+
+Paths are relative to this file. In a project, that's vendor/javaabu/dynamic-menubuilder/.
+
+## Rules
+
+- Define locations and linkable sources in a service provider's `boot()` (or `config/dynamic-menubuilder.php` `locations` / `linkables`). Never hard-code a site menu in a layout when the app has this package; render the location instead.
+- Render with `<x-dynamic-menubuilder::menu location="header" />` (Blade) or `<Menu location="header" />` (React, after adding the location to `config('dynamic-menubuilder.share')`). An unknown location throws; a location without a menu renders nothing.
+- Make models linkable with `implements MenuLinkable` + `use IsMenuLinkable` and write `getMenuLinkUrl(?string $locale)`. Override `getMenuLinkTitleColumn()` for a `name` column, `isMenuLinkVisible()` to hide drafts, and `getMenuLinkIndexUrl()` for an index page. Then `Menus::linkable(Model::class, 'key')`.
+- One model with several types (posts with a `type` column) is several sources: `Menus::linkable(Post::class, 'news')->query(fn ($q) => $q->where('type', 'news'))->indexUrl(...)`. Source keys are stored on items: never rename them.
+- Register the builder with `Route::menus(['prefix' => 'admin/menus', 'guard' => …])` inside the app's admin middleware group. Nothing registers routes automatically. Run `php artisan permissions:sync` for `view_menus`, `edit_menus`, `delete_menus`.
+- Depth: a location's `maxDepth()` limits the builder and the rendering. A menu in several locations is limited by the shallowest.
+- Who sees a menu on the site is the location's `can()` and each item's visibility (everyone/guests/users of the location's guard), not the menus permissions.
+- Save menus in code with `MenuTree::sync($menu, $items)`: a flat list in tree order, each item naming its `parent` key. Assign locations with `$menu->assignLocations([...])` or `Menus::assign('header', $menu)`.
+- With javaabu/translatable, item fields are `title_{locale}` and `url_{locale}`; there's one structure for all languages. Limit an item to languages with `locales`.
+- Override the controller with `config('dynamic-menubuilder.controllers.menus')`, the policy with `config('permissions.policies')` or `Gate::policy(Menu::class, …)`, the form by extending `MenuForm`.
+- Every user-facing string goes through `__('dynamic-menubuilder::strings.…')` with a Dhivehi line. Use logical CSS (`ms-`, `margin-inline-start`) and Thaana in tests.
+
+## Docs
+
+- [Introduction](docs/intro.md): what the package does
+- [Requirements](docs/requirements.md): PHP, Laravel, the Javaabu packages and optional ones
+- [Installation & Setup](docs/installation-and-setup.md): installing, migrating, locations, sources, routes, Blade and Inertia setup, publishing
+- [AI assistants](docs/ai-assistants.md): llms.txt and Laravel Boost
+- [Upgrading](docs/upgrading.md): from the unreleased version
+- [Menu locations](docs/basic-usage/menu-locations.md): defining locations, depth, can(), assigning menus
+- [Linkable models](docs/basic-usage/linkable-models.md): the MenuLinkable contract, IsMenuLinkable, sources, one model with several sources
+- [Building menus](docs/basic-usage/building-menus.md): Route::menus(), the builder, keyboard moves, item fields, Blade and React, MenuItemsField, MenuTree
+- [Rendering menus](docs/basic-usage/rendering-menus.md): the Blade component, Menus::items(), MenuNode, the React Menu and useMenu, shared data
+- [Configuration](docs/advanced-usage/configuration.md): every config option
+- [Permissions and policies](docs/advanced-usage/permissions-and-policies.md): view_menus, edit_menus, delete_menus, MenuPolicy, guards, overriding
+- [Overriding controllers and views](docs/advanced-usage/overriding-controllers-and-views.md): controllers, the stencil form, Blade views, React pages, the builder script
+- [Translations](docs/advanced-usage/translations.md): javaabu/translatable, one structure for every language, fallbacks, linkable models
+- [Dhivehi and RTL](docs/advanced-usage/dhivehi-and-rtl.md): strings, right to left, Thaana, translations for review
+- [API reference](docs/advanced-usage/api-reference.md): every PHP class, the JSON API and the JavaScript exports
+- [Testing](docs/advanced-usage/testing.md): factories, testing menus and the builder, the package's fixtures
+- [For package authors](docs/advanced-usage/for-package-authors.md): making a package's models linkable and registering sources
+- [Questions and Security](docs/questions-and-security.md): where to get help
+- [Changelog](docs/changelog.md): where changes are listed
+- [About Us](docs/about-us.md): Javaabu
+- [Contributing to the docs](docs/contributing-to-docs.md): how the docs are built

@@ -1,5 +1,5 @@
 {
     "name": "Dynamic Menubuilder",
-    "description": "Adds dynamic dropdown menus to your Laravel application",
+    "description": "Drag-and-drop menus for Laravel: developer-defined locations, links to your models, Blade and Inertia React builder pages, and optional javaabu/translatable support",
     "version": "1"
 }

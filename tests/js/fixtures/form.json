@@ -1,0 +1,447 @@
+{
+    "menus": {
+        "header": [
+            {
+                "id": 1,
+                "title": "Home",
+                "url": "/",
+                "type": "link",
+                "depth": 1,
+                "target": null,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "current": false,
+                "active": false,
+                "children": []
+            },
+            {
+                "id": 2,
+                "title": "ޚިދުމަތްތައް",
+                "url": null,
+                "type": "link",
+                "depth": 1,
+                "target": null,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "current": false,
+                "active": false,
+                "children": [
+                    {
+                        "id": 3,
+                        "title": "About us",
+                        "url": "http://localhost/pages/about",
+                        "type": "model",
+                        "depth": 2,
+                        "target": null,
+                        "rel": null,
+                        "css_class": null,
+                        "icon": null,
+                        "current": false,
+                        "active": false,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "title": "News",
+                "url": "http://localhost/news",
+                "type": "index",
+                "depth": 1,
+                "target": "_blank",
+                "rel": "noopener",
+                "css_class": null,
+                "icon": null,
+                "current": false,
+                "active": false,
+                "children": []
+            }
+        ]
+    },
+    "errors": [],
+    "guard": "web",
+    "urls": {
+        "index": "http://localhost/admin/menus",
+        "create": "http://localhost/admin/menus/create",
+        "store": "http://localhost/admin/menus",
+        "search": "http://localhost/admin/menus/linkables/{source}",
+        "edit": "http://localhost/admin/menus/1/edit",
+        "update": "http://localhost/admin/menus/1",
+        "destroy": "http://localhost/admin/menus/1"
+    },
+    "can": {
+        "create": true,
+        "view": true,
+        "update": true,
+        "delete": true
+    },
+    "status": {
+        "success": null,
+        "error": null
+    },
+    "strings": {
+        "menus": "Menus",
+        "locations": "Menu locations",
+        "location": "Location",
+        "menu": "Menu",
+        "name": "Name",
+        "items": "Menu items",
+        "new": "New menu",
+        "back": "Back to menus",
+        "edit": "Edit",
+        "delete": "Delete",
+        "actions": "Actions",
+        "search": "Search",
+        "search_placeholder": "Search menus",
+        "confirm_delete": "Delete this menu? Its items are deleted too.",
+        "empty": "No menus yet.",
+        "no_menu": "No menu",
+        "no_locations": "The app has no menu locations yet."
+    },
+    "title": "މައި މެނޫ",
+    "form": {
+        "stencil": 1,
+        "id": "dynamic-menubuilder-menu-form",
+        "action": "http://localhost/admin/menus/1",
+        "method": "PATCH",
+        "operation": "edit",
+        "submit": "Save menu",
+        "summary": true,
+        "state": {
+            "name": "މައި މެނޫ",
+            "locations": [
+                "header"
+            ],
+            "items": [
+                {
+                    "key": "1",
+                    "id": 1,
+                    "parent": null,
+                    "type": "link",
+                    "source": null,
+                    "linkable_id": null,
+                    "linkable_label": null,
+                    "source_label": null,
+                    "broken": false,
+                    "title": "Home",
+                    "url": "/",
+                    "new_tab": false,
+                    "rel": null,
+                    "css_class": null,
+                    "icon": null,
+                    "visibility": "everyone",
+                    "locales": []
+                },
+                {
+                    "key": "2",
+                    "id": 2,
+                    "parent": null,
+                    "type": "link",
+                    "source": null,
+                    "linkable_id": null,
+                    "linkable_label": null,
+                    "source_label": null,
+                    "broken": false,
+                    "title": "ޚިދުމަތްތައް",
+                    "url": null,
+                    "new_tab": false,
+                    "rel": null,
+                    "css_class": null,
+                    "icon": null,
+                    "visibility": "everyone",
+                    "locales": []
+                },
+                {
+                    "key": "3",
+                    "id": 3,
+                    "parent": "2",
+                    "type": "model",
+                    "source": "pages",
+                    "linkable_id": "1",
+                    "linkable_label": "About us",
+                    "source_label": "Pages",
+                    "broken": false,
+                    "title": null,
+                    "url": null,
+                    "new_tab": false,
+                    "rel": null,
+                    "css_class": null,
+                    "icon": null,
+                    "visibility": "everyone",
+                    "locales": []
+                },
+                {
+                    "key": "4",
+                    "id": 4,
+                    "parent": null,
+                    "type": "index",
+                    "source": "news",
+                    "linkable_id": null,
+                    "linkable_label": "News",
+                    "source_label": "News",
+                    "broken": false,
+                    "title": null,
+                    "url": null,
+                    "new_tab": true,
+                    "rel": null,
+                    "css_class": null,
+                    "icon": null,
+                    "visibility": "everyone",
+                    "locales": []
+                }
+            ]
+        },
+        "live": null,
+        "components": [
+            {
+                "type": "section",
+                "key": "section-0",
+                "props": {
+                    "heading": "Menu"
+                },
+                "children": [
+                    {
+                        "type": "text",
+                        "key": "name",
+                        "name": "name",
+                        "component": "Text",
+                        "props": {
+                            "label": "Name",
+                            "required": true,
+                            "maxLength": 255
+                        }
+                    },
+                    {
+                        "type": "checkbox-list",
+                        "key": "locations",
+                        "name": "locations[]",
+                        "component": "Checkbox",
+                        "props": {
+                            "label": "Show in",
+                            "help": "A location shows one menu: ticking one takes it from the menu it shows now.",
+                            "options": [
+                                {
+                                    "value": "header",
+                                    "label": "Header"
+                                },
+                                {
+                                    "value": "footer",
+                                    "label": "Footer"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "section",
+                "key": "section-1",
+                "props": {
+                    "heading": "Items"
+                },
+                "children": [
+                    {
+                        "type": "menu-items",
+                        "key": "items",
+                        "name": "items",
+                        "props": {
+                            "label": "Menu items",
+                            "showLabel": false,
+                            "sources": [
+                                {
+                                    "key": "pages",
+                                    "label": "Pages",
+                                    "has_index": true,
+                                    "index_title": "Pages"
+                                },
+                                {
+                                    "key": "news",
+                                    "label": "News",
+                                    "has_index": true,
+                                    "index_title": "News"
+                                },
+                                {
+                                    "key": "events",
+                                    "label": "Events",
+                                    "has_index": false,
+                                    "index_title": "Events"
+                                }
+                            ],
+                            "locations": [
+                                {
+                                    "key": "header",
+                                    "label": "Header",
+                                    "description": null,
+                                    "max_depth": 2
+                                },
+                                {
+                                    "key": "footer",
+                                    "label": "Footer",
+                                    "description": null,
+                                    "max_depth": 1
+                                }
+                            ],
+                            "locationsField": "locations",
+                            "defaultMaxDepth": 3,
+                            "searchUrl": "http://localhost/admin/menus/linkables/{source}",
+                            "visibilities": [
+                                {
+                                    "value": "everyone",
+                                    "label": "Everyone"
+                                },
+                                {
+                                    "value": "guests",
+                                    "label": "Signed-out visitors"
+                                },
+                                {
+                                    "value": "users",
+                                    "label": "Signed-in users"
+                                }
+                            ],
+                            "strings": {
+                                "add_items": "Add items",
+                                "custom_link": "Link",
+                                "title": "Title",
+                                "url": "URL",
+                                "url_help": "Leave the URL empty for a heading, such as the label of a dropdown.",
+                                "add_to_menu": "Add to menu",
+                                "search": "Search :source",
+                                "no_results": "Nothing found.",
+                                "searching": "Searching…",
+                                "index_page": "All :source",
+                                "add_index": "Add the index page",
+                                "structure": "Menu structure",
+                                "empty": "The menu has no items. Add items from the list.",
+                                "drag": "Drag to reorder :title",
+                                "move_up": "Move up",
+                                "move_down": "Move down",
+                                "indent": "Move under the item above",
+                                "outdent": "Move out of its parent",
+                                "remove": "Remove",
+                                "edit_item": "Edit :title",
+                                "done": "Done",
+                                "new_tab": "Open in a new tab",
+                                "rel": "Link relationship (rel)",
+                                "css_class": "CSS classes",
+                                "icon": "Icon",
+                                "visibility": "Show to",
+                                "locales": "Show in these languages",
+                                "locales_help": "Leave all unticked to show it in every language.",
+                                "broken": "The record this item linked to was deleted. Remove the item.",
+                                "untranslated": "No title in :language: it falls back to the original.",
+                                "max_depth": "Levels this menu's locations show: :max",
+                                "default_title": "Uses the title of :title",
+                                "moved": ":title moved to position :position of :total.",
+                                "indented": ":title is now under :parent.",
+                                "outdented": ":title moved out of :parent.",
+                                "removed": ":title removed.",
+                                "added": ":title added to the menu.",
+                                "untitled": "Untitled",
+                                "heading": "Heading"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "menu": {
+        "id": 1,
+        "name": "މައި މެނޫ",
+        "locations": [
+            "header"
+        ],
+        "items": [
+            {
+                "key": "1",
+                "id": 1,
+                "parent": null,
+                "type": "link",
+                "source": null,
+                "linkable_id": null,
+                "linkable_label": null,
+                "source_label": null,
+                "broken": false,
+                "title": "Home",
+                "url": "/",
+                "new_tab": false,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "visibility": "everyone",
+                "locales": []
+            },
+            {
+                "key": "2",
+                "id": 2,
+                "parent": null,
+                "type": "link",
+                "source": null,
+                "linkable_id": null,
+                "linkable_label": null,
+                "source_label": null,
+                "broken": false,
+                "title": "ޚިދުމަތްތައް",
+                "url": null,
+                "new_tab": false,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "visibility": "everyone",
+                "locales": []
+            },
+            {
+                "key": "3",
+                "id": 3,
+                "parent": "2",
+                "type": "model",
+                "source": "pages",
+                "linkable_id": "1",
+                "linkable_label": "About us",
+                "source_label": "Pages",
+                "broken": false,
+                "title": null,
+                "url": null,
+                "new_tab": false,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "visibility": "everyone",
+                "locales": []
+            },
+            {
+                "key": "4",
+                "id": 4,
+                "parent": null,
+                "type": "index",
+                "source": "news",
+                "linkable_id": null,
+                "linkable_label": "News",
+                "source_label": "News",
+                "broken": false,
+                "title": null,
+                "url": null,
+                "new_tab": true,
+                "rel": null,
+                "css_class": null,
+                "icon": null,
+                "visibility": "everyone",
+                "locales": []
+            }
+        ],
+        "links": {
+            "edit": "http://localhost/admin/menus/1/edit",
+            "update": "http://localhost/admin/menus/1",
+            "destroy": "http://localhost/admin/menus/1"
+        },
+        "can": {
+            "view": true,
+            "update": true,
+            "delete": true
+        },
+        "created_at": "2026-11-05T10:00:00+00:00",
+        "updated_at": "2026-11-05T10:00:00+00:00"
+    }
+}
